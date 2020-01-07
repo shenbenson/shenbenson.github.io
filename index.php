@@ -12,13 +12,15 @@
 		<div id="pageContainer">
 			<h1>Welcome to Carey's Computers</h1>
 			<p><i>Discover the best technologies</i> &nbsp;-&nbsp; Current Time: 
+			<!--
 			<?php 
 				date_default_timezone_set("America/Toronto"); 
 				echo date("h:i A, M d,Y");  
 				$connection->close();
 			?>
+			-->
 			</p>
-			<a href="/shop.php?search=&order=nameAZ"><button class="button">Start Shopping</button></a>
+			<a href="/"><button class="button">Start Shopping</button></a>
 		</div>
 	</body>
 </html>
