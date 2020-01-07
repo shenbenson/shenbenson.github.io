@@ -2,7 +2,6 @@
 
 <html>
 	<head>
-		<link rel="stylesheet" href="css/navBar.css">
 		<link rel="stylesheet" href="css/home.css">
 		<link rel="icon" type="image/png" href="res/favicon.png">
 		<link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway" rel="stylesheet">
