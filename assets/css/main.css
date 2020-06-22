@@ -72,6 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+#project-name {
+    width: 30%;
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -113,6 +117,10 @@ input, select, textarea {
 
 	html {
 		font-size: 16pt;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -1499,7 +1507,7 @@ input, select, textarea {
 		}
 
 /* Main */
-
+    
 	#main {
 		-moz-flex-grow: 1;
 		-webkit-flex-grow: 1;
