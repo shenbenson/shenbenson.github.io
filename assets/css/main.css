@@ -31,7 +31,10 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
 
 ol, ul {
