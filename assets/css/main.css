@@ -160,10 +160,10 @@ input, select, textarea {
 	}
 	
 	#emailhere {
-		-webkit-user-select: auto; /* Safari */        
-		-moz-user-select: auto; /* Firefox */
-		-ms-user-select: auto; /* IE10+/Edge */
-		user-select: auto; /* Standard */
+		-webkit-user-select: text; /* Safari */        
+		-moz-user-select: text; /* Firefox */
+		-ms-user-select: text; /* IE10+/Edge */
+		user-select: text; /* Standard */
 	}
 
 	a {
