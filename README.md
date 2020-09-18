@@ -1,2 +1,2 @@
 # Yubin Shen's Profile
-The website is under construction...
+The personal profile of Yubin Shen
