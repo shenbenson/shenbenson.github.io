@@ -1,39 +1,37 @@
 <html>
     <head>
-        <title>Pricing Page</title>
+        <title>Pricing Page Demo</title>
         <script>
             function annually() {
-                document.getElementById("monthly-button").style.background = "white";
+                document.getElementById("monthly-button").style.background = "#efefef";
                 document.getElementById("monthly-button").style.color = "#4a4a4a";
                 document.getElementById("monthly-button").style.cursor = "pointer";
-                 
+
                 document.getElementById("annually-button").style.background = "#cc3333";
                 document.getElementById("annually-button").style.color = "white";
                 document.getElementById("annually-button").style.cursor = "default";
-                  
 
                 var show = document.getElementsByClassName('annual');
                 for (var i = 0; i < show.length; i++) {
                     show[i].style.display = "block";
                 }
-                  
+
                 var hide = document.getElementsByClassName('monthly');
                 for (var i = 0; i < hide.length; i++) {
                     hide[i].style.display = "none";
                 }
-                  
+
                 /*
                 document.getElementsByClassName("monthly").style.display = "none";
                 document.getElementsByClassName("annual").style.display = "block";
                 */
-                
             }
 
             function monthly() {
-                document.getElementById("annually-button").style.background = "white";
+                document.getElementById("annually-button").style.background = "#efefef";
                 document.getElementById("annually-button").style.color = "#4a4a4a";
                 document.getElementById("annually-button").style.cursor = "pointer";
-                  
+
                 document.getElementById("monthly-button").style.background = "#cc3333";
                 document.getElementById("monthly-button").style.color = "white";
                 document.getElementById("monthly-button").style.cursor = "default";
@@ -42,27 +40,25 @@
                 for (var i = 0; i < hide.length; i++) {
                     hide[i].style.display = "none";
                 }
-                  
+
                 var show = document.getElementsByClassName('monthly');
                 for (var i = 0; i < show.length; i++) {
                     show[i].style.display = "block";
                 }
-                  
+
                 /*
                 document.getElementsByClassName("annual").style.display = "none";
                 document.getElementsByClassName("monthly").style.display = "block";
                 */
-                
             }
         </script>
         <style>
             body {
-                background: #efefef;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Poppins', sans-serif;
             }
 
             #pricing {
-                padding: 25px;
+                padding: 50px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -71,19 +67,15 @@
 
             .tier {
                 background: white;
-                min-height: 500px;
-                height: 500px;
-                min-width: 250px;
-                width: 250px;
-                box-shadow: 0px 0px 30px rgba(136,136,136,0.5);
+                min-height: 525px;
+                height: 525px;
+                min-width: 275px;
+                width: 275px;
+                box-shadow: 0px 0px 30px rgba(136, 136, 136, 0.5);
                 z-index: 1;
                 position: relative;
                 text-align: center;
-                padding: 20px;
-            }
-
-            p {
-                
+                padding: 50px;
             }
 
             #gold {
@@ -93,13 +85,13 @@
                 min-height: 560px;
                 min-width: 300px;
                 margin-top: 0px;
-                box-shadow: 0px 0px 40px rgba(136,136,136,0.5);
+                box-shadow: 0px 0px 40px rgba(136, 136, 136, 0.5);
                 z-index: 2;
                 margin-top: 0px;
             }
 
             #buttons {
-                padding: 50px;
+                padding-top: 50px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -114,7 +106,9 @@
                 background: white;
                 border: none;
                 outline: none;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                font-size: 14px;
             }
 
             .annual {
@@ -132,49 +126,301 @@
             #annually-button {
                 border-top-right-radius: 0.5em;
                 border-bottom-right-radius: 0.5em;
+                background: #efefef;
                 cursor: pointer;
                 color: #4a4a4a;
+            }
+
+            ion-icon {
+                vertical-align: middle;
+                padding-bottom: 4px;
+                padding-right: 10px;
+            }
+
+            .tick {
+                font-size: 26px;
+                color: #cc3333;
+                --ionicon-stroke-width: 36px;
+            }
+
+            .x {
+                font-size: 26px;
+                color: #a3a3a3;
+                --ionicon-stroke-width: 36px;
+            }
+
+            ul {
+                margin: 20px;
+                padding: 0;
+            }
+
+            li {
+                text-align: left;
+                line-height: 40px;
+                font-size: 16px;
+                color: #757575;
+                list-style-type: none!important;
+            }
+
+            .pricing {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .pricing p {
+                padding: 0;
+                margin: 0;
+                display: inline;
+                color: #2b2b2b;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            .plan {
+                font-size: 18px;
+                font-weight: 600;
+                color: #303030;
+            }
+
+            .dollar-sign {
+                font-size: 24px;
+            }
+
+            .dollar {
+                font-size: 55px;
+            }
+
+            .period {
+                font-size: 20px;
+            }
+
+            .start-now {
+                margin-top: 20px;
+                height: 50px;
+                width: 200px;
+                background: white;
+                color: #757575;
+                border: 2px solid #757575;
+                outline: none;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 0.3em;
+                transition-duration: 0.4s;
+            }
+
+            .start-now:hover {
+                color: white;
+                background: #757575;
+                border: 2px solid #757575;
+            }
+
+            .recommended {
+                font-size: 15px;
+                background: #f2bd3f;
+                line-height: 30px;
+                width: 150px;
+                margin: auto;
+                margin-top: -20px;
+                margin-bottom: 25px;
+                color: white;
+                border-radius: 0.3em;
+            }
+
+            .start-now-recommended {
+                margin-top: 20px;
+                height: 50px;
+                width: 225px;
+                background: #cc3333;
+                color: white;
+                border: 2px solid #cc3333;
+                outline: none;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 0.3em;
+                transition-duration: 0.4s;
+            }
+
+            .start-now-recommended:hover {
+                color: #cc3333;
+                background: white;
+                border: 2px solid #cc3333;
             }
         </style>
     </head>
     <body>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <div id="buttons">
-        
-            <button class="switch" id="monthly-button" onclick="monthly()">
-                MONTHLY
-            </button>
-            <button class="switch" id="annually-button" onclick="annually()">
-                ANNUALLY
-            </button>
-
+          <button class="switch" id="monthly-button" onclick="monthly()">
+            MONTHLY
+          </button>
+          <button class="switch" id="annually-button" onclick="annually()">
+            ANNUALLY
+          </button>
         </div>
 
         <div id="pricing">
-
-            <div id="bronze" class="tier">
-                <p class="monthly">MONTHLY INFO</p>
-                <p class="annual">ANNUALLY INFO</p>
+          <div id="bronze" class="tier">
+            <p class="plan">Bronze</p>
+            <div class="monthly">
+              <div class="pricing">
+                <p class="dollar-sign"></p>
+                <p class="dollar">FREE</p>
+                <p class="period"></p>
+              </div>
             </div>
-
-            <div id="silver" class="tier">
-                <p class="monthly">MONTHLY INFO</p>
-                <p class="annual">ANNUALLY INFO</p>
+            <div class="annual">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">255.5</p>
+                <p class="period">/yr</p>
+              </div>
             </div>
+            <ul>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Gaming Stats
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Photo Gallary
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Video Gallary
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Blog & Personalization
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Dynamic Data
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Automatic Backup
+              </li>
+            </ul>
+            <button class="start-now">START BUILDING</button>
+          </div>
 
-            <div id="gold" class="tier">
-                <p class="monthly">MONTHLY INFO</p>
-                <p class="annual">ANNUALLY INFO</p>
+          <div id="silver" class="tier">
+            <p class="plan">Silver</p>
+            <div class="monthly">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">14.99</p>
+                <p class="period">/mo</p>
+              </div>
             </div>
-
-            <div id="platinum" class="tier">
-                <p class="monthly">MONTHLY INFO</p>
-                <p class="annual">ANNUALLY INFO</p>
+            <div class="annual">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">149.99</p>
+                <p class="period">/yr</p>
+              </div>
             </div>
+            <ul>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Gaming Stats
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Photo Gallary
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Video Gallary
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Blog & Personalization
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Dynamic Data
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Automatic Backup
+              </li>
+            </ul>
+            <button class="start-now">START BUILDING</button>
+          </div>
 
+          <div id="gold" class="tier">
+            <p class="recommended">RECOMMENDED</p>
+            <p class="plan">Gold</p>
+            <div class="monthly">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">25.99</p>
+                <p class="period">/mo</p>
+              </div>
+            </div>
+            <div class="annual">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">259.99</p>
+                <p class="period">/yr</p>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Gaming Stats
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Photo Gallary
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Video Gallary
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Blog & Personalization
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Dynamic Data
+              </li>
+              <li>
+                <ion-icon class="x" name="close-circle-outline"></ion-icon>Automatic Backup
+              </li>
+            </ul>
+            <button class="start-now">START BUILDING</button>
+          </div>
+
+          <div id="platinum" class="tier">
+            <p class="plan">Platinum</p>
+            <div class="monthly">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">39.99</p>
+                <p class="period">/mo</p>
+              </div>
+            </div>
+            <div class="annual">
+              <div class="pricing">
+                <p class="dollar-sign">$</p>
+                <p class="dollar">399.99</p>
+                <p class="period">/yr</p>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Gaming Stats
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Photo Gallary
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Video Gallary
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Blog & Personalization
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Dynamic Data
+              </li>
+              <li>
+                <ion-icon class="tick" name="checkmark-circle-outline"></ion-icon>Automatic Backup
+              </li>
+            </ul>
+            <button class="start-now">START BUILDING</button>
+          </div>
         </div>
-
     </body>
  </html>
