@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Pricing Page Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>            
             function annually() {
                 document.getElementById("monthly-button").style.background = "#efefef";
@@ -67,7 +68,7 @@
             }
 
             .tier {
-                margin-bottom: 50px;
+                margin-bottom: 30px;
                 background: white;
                 min-height: 525px;
                 height: 525px;
@@ -250,6 +251,16 @@
                 color: #cc3333;
                 background: white;
                 border: 2px solid #cc3333;
+            }
+
+            @media screen and (max-width: 885px) {
+                .tier {
+                    margin: 0;
+                }
+                
+                body {
+                  padding: 20px;
+                }
             }
         </style>
     </head>
