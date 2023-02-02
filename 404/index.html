@@ -6,6 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>404 - Page not found</title>
         <style>
+            :root {
+                --strokes: #59513C;
+                --bgcolor: #f2f2f2;
+                --notfound: #A7444B;
+            }
+
+            html {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: var(--bgcolor);
+            }
+
             .container{
                 min-height: 100vh;
                 display: -ms-flexbox;
@@ -32,10 +49,10 @@
                 height: auto;
             }
             #tree{
-                stroke: #59513C;
+                stroke: var(--strokes);
             }
             #wood-stump{
-                stroke: #59513C;
+                stroke: var(--strokes);
                 -webkit-animation: wood-stump 3s infinite ease-in-out;
                 -moz-animation: wood-stump 3s infinite ease-in-out;
                 -o-animation: wood-stump 3s infinite ease-in-out;
@@ -95,7 +112,7 @@
                 }
             }
             #leaf{
-                stroke: #59513C;
+                stroke: var(--strokes);
                 -webkit-animation: leaf 7s infinite ease-in-out;
                 -moz-animation: leaf 7s infinite ease-in-out;
                 -o-animation: leaf 7s infinite ease-in-out;
@@ -155,16 +172,27 @@
                 }
             }
             #border{
-                stroke: #59513C;
+                stroke: var(--strokes);
             }
             #Page{
-                fill: #59513C;
+                fill: var(--strokes);
             }
             #notFound{
-                fill: #A7444B;
+                fill: var(--notfound);
             }
             
         </style>
+        <script>
+            const hours = new Date().getHours()
+            const isDayTime = hours > 8 && hours < 18;
+            
+            if(isDayTime === false){
+                var r = document.querySelector(':root');
+                r.style.setProperty('--strokes', '#ececec');
+                r.style.setProperty('--bgcolor', '#363636');
+                r.style.setProperty('--notfound', '#f75c66');
+            }
+        </script>
     </head>
     <body>
         <div class="container">
