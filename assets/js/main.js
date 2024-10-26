@@ -47,8 +47,7 @@
         },
 
         // If set to a valid selector , prevents key/mouse events from bubbling from these elements.
-        excludeSelector:
-            'input:focus, select:focus, textarea:focus, audio, video, iframe',
+        excludeSelector: 'input:focus, select:focus, textarea:focus, audio, video, iframe',
 
         // Link scroll speed.
         linkScrollSpeed: 1000,
@@ -138,14 +137,10 @@
             $wrapper
 
                 // Prevent keystrokes inside excluded elements from bubbling.
-                .on(
-                    'keypress keyup keydown',
-                    settings.excludeSelector,
-                    function (event) {
-                        // Stop propagation.
-                        event.stopPropagation();
-                    }
-                );
+                .on('keypress keyup keydown', settings.excludeSelector, function (event) {
+                    // Stop propagation.
+                    event.stopPropagation();
+                });
 
             $window
 
@@ -156,36 +151,26 @@
                     switch (event.keyCode) {
                         // Left arrow.
                         case 37:
-                            $document.scrollLeft(
-                                $document.scrollLeft() -
-                                    settings.keyboardShortcuts.distance
-                            );
+                            $document.scrollLeft($document.scrollLeft() - settings.keyboardShortcuts.distance);
                             scrolled = true;
                             break;
 
                         // Right arrow.
                         case 39:
-                            $document.scrollLeft(
-                                $document.scrollLeft() +
-                                    settings.keyboardShortcuts.distance
-                            );
+                            $document.scrollLeft($document.scrollLeft() + settings.keyboardShortcuts.distance);
                             scrolled = true;
                             break;
 
                         // Page Up.
                         case 33:
-                            $document.scrollLeft(
-                                $document.scrollLeft() - $window.width() + 100
-                            );
+                            $document.scrollLeft($document.scrollLeft() - $window.width() + 100);
                             scrolled = true;
                             break;
 
                         // Page Down, Space.
                         case 34:
                         case 32:
-                            $document.scrollLeft(
-                                $document.scrollLeft() + $window.width() - 100
-                            );
+                            $document.scrollLeft($document.scrollLeft() + $window.width() - 100);
                             scrolled = true;
                             break;
 
@@ -288,15 +273,11 @@
                 // Calculate delta, direction.
                 var n = normalizeWheel(event.originalEvent),
                     x = n.pixelX != 0 ? n.pixelX : n.pixelY,
-                    delta =
-                        Math.min(Math.abs(x), 150) *
-                        settings.scrollWheel.factor,
+                    delta = Math.min(Math.abs(x), 150) * settings.scrollWheel.factor,
                     direction = x > 0 ? 1 : -1;
 
                 // Scroll page.
-                $document.scrollLeft(
-                    $document.scrollLeft() + delta * direction
-                );
+                $document.scrollLeft($document.scrollLeft() + delta * direction);
             });
         })();
 
@@ -326,10 +307,7 @@
                     clearInterval(intervalId);
 
                     intervalId = setInterval(function () {
-                        $document.scrollLeft(
-                            $document.scrollLeft() +
-                                settings.scrollZones.speed * direction
-                        );
+                        $document.scrollLeft($document.scrollLeft() + settings.scrollZones.speed * direction);
                     }, 25);
                 },
                 deactivate = function () {
@@ -340,11 +318,9 @@
                     clearInterval(intervalId);
                 };
 
-            $zones
-                .appendTo($wrapper)
-                .on('mouseleave mousedown', function (event) {
-                    deactivate();
-                });
+            $zones.appendTo($wrapper).on('mouseleave mousedown', function (event) {
+                deactivate();
+            });
 
             $left.css('left', '0').on('mouseenter', function (event) {
                 activate(-1);
@@ -383,32 +359,24 @@
             $wrapper
 
                 // Prevent image drag and drop.
-                .on(
-                    'mouseup mousemove mousedown',
-                    '.image, img',
-                    function (event) {
-                        event.preventDefault();
-                    }
-                )
+                .on('mouseup mousemove mousedown', '.image, img', function (event) {
+                    event.preventDefault();
+                })
 
                 // Prevent mouse events inside excluded elements from bubbling.
-                .on(
-                    'mouseup mousemove mousedown',
-                    settings.excludeSelector,
-                    function (event) {
-                        // Prevent event from bubbling.
-                        event.stopPropagation();
+                .on('mouseup mousemove mousedown', settings.excludeSelector, function (event) {
+                    // Prevent event from bubbling.
+                    event.stopPropagation();
 
-                        // End drag.
-                        dragging = false;
-                        $wrapper.removeClass('is-dragging');
-                        clearInterval(velocityIntervalId);
-                        clearInterval(momentumIntervalId);
+                    // End drag.
+                    dragging = false;
+                    $wrapper.removeClass('is-dragging');
+                    clearInterval(velocityIntervalId);
+                    clearInterval(momentumIntervalId);
 
-                        // Pause scroll zone.
-                        $wrapper.triggerHandler('---pauseScrollZone');
-                    }
-                )
+                    // Pause scroll zone.
+                    $wrapper.triggerHandler('---pauseScrollZone');
+                })
 
                 // Mousedown event.
                 .on('mousedown', function (event) {
@@ -485,8 +453,7 @@
                     }
 
                     // Distance exceeds threshold? Prevent default.
-                    if (distance > settings.dragging.threshold)
-                        event.preventDefault();
+                    if (distance > settings.dragging.threshold) event.preventDefault();
 
                     // End drag.
                     dragging = false;
@@ -509,16 +476,13 @@
                             }
 
                             // Scroll page.
-                            $document.scrollLeft(
-                                $document.scrollLeft() + m * direction
-                            );
+                            $document.scrollLeft($document.scrollLeft() + m * direction);
 
                             // Decrease momentum.
                             m = m * settings.dragging.momentum;
 
                             // Negligible momentum? Clear interval and end.
-                            if (Math.abs(m) < 1)
-                                clearInterval(momentumIntervalId);
+                            if (Math.abs(m) < 1) clearInterval(momentumIntervalId);
                         }, 15);
                     }
                 });
@@ -546,14 +510,10 @@
 
             // Calculate x, y.
             if (breakpoints.active('<=small')) {
-                x =
-                    $target.offset().top -
-                    Math.max(0, $window.height() - $target.outerHeight()) / 2;
+                x = $target.offset().top - Math.max(0, $window.height() - $target.outerHeight()) / 2;
                 y = { scrollTop: x };
             } else {
-                x =
-                    $target.offset().left -
-                    Math.max(0, $window.width() - $target.outerWidth()) / 2;
+                x = $target.offset().left - Math.max(0, $window.width() - $target.outerWidth()) / 2;
                 y = { scrollLeft: x };
             }
 
@@ -646,9 +606,7 @@
             // Stop propagation.
             event.stopPropagation();
         })
-        .prepend(
-            '<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>'
-        )
+        .prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
         .find('img')
         .on('load', function (event) {
             var $modalImg = $(this),
@@ -664,7 +622,7 @@
         });
 })(jQuery);
 
-const greetings = ['Welcome!', 'Hello, welcome!', 'Hello World!', 'Hey there!'];
+const greetings = ['Welcome!', 'Hello, welcome!', 'Hello World!'];
 
 // Function to generate a random index
 function getRandomIndex(max) {
@@ -676,16 +634,12 @@ function getRandomIndex(max) {
 //     greetings[getRandomIndex(greetings.length)];
 
 var options = {
-    strings: [
-        greetings[getRandomIndex(greetings.length)],
-        greetings[getRandomIndex(greetings.length)],
-    ],
+    strings: [greetings[getRandomIndex(greetings.length)], greetings[getRandomIndex(greetings.length)]],
     typeSpeed: 80,
     backSpeed: 40,
     onComplete: function () {
         setTimeout(function () {
-            var elementsToHide =
-                document.getElementsByClassName('typed-cursor');
+            var elementsToHide = document.getElementsByClassName('typed-cursor');
 
             if (elementsToHide.length > 0) {
                 for (var i = 0; i < elementsToHide.length; i++) {
