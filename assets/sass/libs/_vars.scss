@@ -43,18 +43,18 @@ $font: (
     weight-heading: 700,
 );
 
-// Palette.
+// Palette (blue theme).
 $palette: (
     bg: #2e2b37,
-    bg-alt: #e1e6e1,
+    bg-alt: #e8eef4,
     fg: rgba(255, 255, 255, 0.75),
     fg-bold: rgba(255, 255, 255, 0.875),
     fg-light: rgba(255, 255, 255, 0.5),
     border: rgba(255, 255, 255, 0.25),
     border-bg: rgba(255, 255, 255, 0.075),
     border-bg-alt: rgba(255, 255, 255, 0.125),
-    accent1: #726193,
-    accent2: #e37b7c,
-    accent3: #ffe4b4,
-    accent4: #353865,
+    accent1: #2c5282,
+    accent2: #3182ce,
+    accent3: #63b3ed,
+    accent4: #1e3a5f,
 );

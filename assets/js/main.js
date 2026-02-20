@@ -624,17 +624,15 @@
 
 const greetings = ['Welcome!', 'Hello, welcome!', 'Hello World!'];
 
-// Function to generate a random index
-function getRandomIndex(max) {
-    return Math.floor(Math.random() * max);
+function pickTwoDifferentGreetings() {
+    var i = Math.floor(Math.random() * greetings.length);
+    var j = Math.floor(Math.random() * (greetings.length - 1));
+    if (j >= i) j += 1;
+    return [greetings[i], greetings[j]];
 }
 
-// Set a random greeting on page load
-// document.getElementById('greeting-msg').textContent =
-//     greetings[getRandomIndex(greetings.length)];
-
 var options = {
-    strings: [greetings[getRandomIndex(greetings.length)], greetings[getRandomIndex(greetings.length)]],
+    strings: pickTwoDifferentGreetings(),
     typeSpeed: 80,
     backSpeed: 40,
     onComplete: function () {
